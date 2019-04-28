@@ -9,7 +9,7 @@ hilite <- function(x, deco = "red") {
   }
 }
 
-#' Visualize entities in text parsed with Spacy.
+#' Visualize entities in text parsed with spacyr.
 #'
 #' @param x     A spacyr_parsed object
 #' @param deco  A crayon style, given as a character string
@@ -28,7 +28,7 @@ hilite <- function(x, deco = "red") {
 #' the Central European University (Budapest)."
 #' txt <- gsub("\n", " ", txt)
 #
-#' parsed <- spacyr::spacy_parse(txt, lemma = FALSE, additional_attributes = "whitespace_")
+#' parsed <- spacyr::spacy_parse(txt, additional_attributes = "whitespace_")
 #' display_ent(parsed, deco = "yellow")
 #' }
 #' @export
