@@ -12,7 +12,7 @@ display_ent(x, deco = "red")
 \item{deco}{A crayon style, given as a character string}
 }
 \value{
-A character vector with styled tokens
+A character string with styled tokens
 }
 \description{
 Visualize entities in text parsed with Spacy.

@@ -13,7 +13,7 @@ hilite <- function(x, deco = "red") {
 #'
 #' @param x     A spacyr_parsed object
 #' @param deco  A crayon style, given as a character string
-#' @return A character vector with styled tokens
+#' @return A character string with styled tokens
 #' @details x must include the "whitespace_" attribute. Therefore, \code{spacy_parse}
 #'   should be run with the \code{additional_attributes} argument:
 #'   \code{spacy_parse(x, ..., additional_attributes = "whitespace_")}. This
@@ -49,8 +49,9 @@ display_ent <- function(x, deco = "red") {
     if (entity == "") return(entity_token)
     hilite(entity_token, deco = deco)
   }))
-  disp_out <- strwrap(paste(out, collapse = ""), width = 80)
+  out <- paste(out, collapse = "")
+  disp_out <- strwrap(out, width = 80)
   cat(disp_out, "\n", sep = "\n")
-  out
+  invisible(out)
 }
 
