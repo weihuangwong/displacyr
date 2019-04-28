@@ -31,6 +31,7 @@ hilite <- function(x, deco = "red") {
 #' parsed <- spacyr::spacy_parse(txt, lemma = FALSE, additional_attributes = "whitespace_")
 #' display_ent(parsed, deco = "yellow")
 #' }
+#' @export
 display_ent <- function(x, deco = "red") {
   if (!("whitespace_" %in% names(x)))
     stop('Dataframe must have "whitespace_" column; try spacy_parse(x, ..., additional_attributes = "whitespace_")')
@@ -52,9 +53,4 @@ display_ent <- function(x, deco = "red") {
   cat(disp_out, "\n", sep = "\n")
   out
 }
-
-# txt <- "Kenneth Benoit is currently Professor of Computational Social Science in the Department of Methodology at the London School of Economics and Political Science. He has previously held positions in the Department of Political Science at Trinity College Dublin and at the Central European University (Budapest)."
-#
-# parsed <- spacyr::spacy_parse(txt, lemma = FALSE, additional_attributes = "whitespace_")
-# display_ent(parsed, deco = "yellow")
 
