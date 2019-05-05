@@ -2,20 +2,22 @@
 % Please edit documentation in R/display_ent.R
 \name{display_ent}
 \alias{display_ent}
-\title{Visualize entities in text parsed with Spacy.}
+\title{Visualize entities in text parsed with spacyr.}
 \usage{
-display_ent(x, deco = "red")
+display_ent(x, deco_ent = "bgYellow", deco_lab = "bgBlue")
 }
 \arguments{
 \item{x}{A spacyr_parsed object}
 
-\item{deco}{A crayon style, given as a character string}
+\item{deco_ent}{A crayon style for entity name, given as a character string}
+
+\item{deco_lab}{A crayon style for entity label, given as a character string}
 }
 \value{
 A character string with styled tokens
 }
 \description{
-Visualize entities in text parsed with Spacy.
+Visualize entities in text parsed with spacyr.
 }
 \details{
 x must include the "whitespace_" attribute. Therefore, \code{spacy_parse}
@@ -26,13 +28,8 @@ x must include the "whitespace_" attribute. Therefore, \code{spacy_parse}
 }
 \examples{
 \dontrun{
-txt <- "Kenneth Benoit is currently Professor of Computational Social
-Science in the Department of Methodology at the London School of
-Economics and Political Science. He has previously held positions in
-the Department of Political Science at Trinity College Dublin and at
-the Central European University (Budapest)."
-txt <- gsub("\\n", " ", txt)
-parsed <- spacyr::spacy_parse(txt, lemma = FALSE, additional_attributes = "whitespace_")
-display_ent(parsed, deco = "yellow")
+txt <- "Larry Page is the co-founder of Google, located in Mountain View, CA."
+parsed <- spacyr::spacy_parse(txt, additional_attributes = "whitespace_")
+display_ent(parsed)
 }
 }
